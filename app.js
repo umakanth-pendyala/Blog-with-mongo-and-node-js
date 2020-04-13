@@ -139,7 +139,7 @@ app.post("/composed", (req, res) => {
 })
 
 
-app.listen(5000, () => {
+app.listen(5000 || process.env.PORT, () => {
   console.log("port running perfectly");
 })
 

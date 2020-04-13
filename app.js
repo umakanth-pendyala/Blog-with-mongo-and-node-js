@@ -54,29 +54,19 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
 
   Post.find((err, data) => {
-    if (err) {
-      console.log("database error occured")
-    }
-    else {
       posts = [];
       for (var i = 0; i < data.length; i++) {
         var buffer = {
           title: data[i].title,
           postBody: data[i].postInfo
         }
-        console.log(buffer);
         posts.push(buffer);
       }
-      console.log(posts);
       res.render("home", {
         para_1: homeStartingContent,
         posts: posts
       });
-    }
-    console.log(posts);
   })
-  console.log(posts);
-
 })
 
 app.get("/posts/:name", (req, res) => {

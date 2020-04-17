@@ -69,6 +69,39 @@ app.get("/", (req, res) => {
   })
 })
 
+
+
+
+app.post("/identify", (req, res) => {
+  res.render("checkUser", {
+    errMsg: ""
+  });
+})
+
+
+
+app.post("/userIn", (req, res) => {
+  var email = req.body.emailBx;
+  var password = req.body.passBx;
+  console.log(email, password);
+  if (password == "10101001") {
+    res.render("compose");
+  }
+  else if (password == "") {
+    res.render("checkUser", {
+      errMsg: ""
+    })
+  }
+  else {
+
+    res.render("checkUser", {
+      errMsg: "password incorrect"
+    })
+  }
+})
+
+
+
 app.get("/posts/:name", (req, res) => {
   var postName = req.params.name;
   postName = stringModifier.lowerCase(postName);
@@ -129,7 +162,7 @@ app.post("/composed", (req, res) => {
 })
 
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("port running perfectly");
 })
 

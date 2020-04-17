@@ -19,6 +19,50 @@
     color: #1abc9c !important;
 }
 
+.gop {
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.aod {
+    margin-top: 5px;
+    border: 2px solid;
+    background-color: #fe346e;
+    opacity: 0.7;
+}
+
+.icon {
+    margin-left: 120px;
+    /* align-items: center; */
+}
+.lop {
+    margin-top: 40px;
+    margin-left: 88%;
+}
+
+#lol {
+    /* margin-bottom: 10px; */
+}
+.fa-exclamation-triangle {
+    margin-right: 10px;
+}
+
+.sos {
+    margin-top: 40px;
+}
+
+.gop input {
+    height: 50px;
+}
+
+.gop h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
 .footer-padding {
     padding-bottom: 60px;
 }

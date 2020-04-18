@@ -69,14 +69,19 @@ app.get("/", (req, res) => {
   })
 })
 
-
-
-
-app.post("/identify", (req, res) => {
+app.get("/compose" , (req, res) => {
   res.render("checkUser", {
     errMsg: ""
   });
-})
+});
+
+
+
+// app.post("/identify", (req, res) => {
+//   res.render("checkUser", {
+//     errMsg: ""
+//   });
+// })
 
 
 

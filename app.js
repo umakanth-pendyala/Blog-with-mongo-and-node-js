@@ -89,7 +89,7 @@ app.post("/userIn", (req, res) => {
   var email = req.body.emailBx;
   var password = req.body.passBx;
   console.log(email, password);
-  if (password == "10101001") {
+  if (password == "10101001" && email == "umakanthpendyala@gmail.com") {
     res.render("compose");
   }
   else if (password == "") {
@@ -167,7 +167,7 @@ app.post("/composed", (req, res) => {
 })
 
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("port running perfectly");
 })
 

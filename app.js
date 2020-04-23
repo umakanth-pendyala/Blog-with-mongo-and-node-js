@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -11,9 +11,9 @@ const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pelle
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 
 const app = express();
+var url = "mongodb+srv://umakanthpendyala:posts123@newtestserver-abxpk.mongodb.net/postDb";
 
-
-mongoose.connect("mongodb+srv://umakanthpendyala:posts123@newtestserver-abxpk.mongodb.net/postDb", { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+mongoose.connect(process.env.URL, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
   if (err) {
     console.log("didnt connect to database");
   }
@@ -167,7 +167,7 @@ app.post("/composed", (req, res) => {
 })
 
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("port running perfectly");
 })
 
